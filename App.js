@@ -1,10 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import PieChart from "./assets/piechart.png";
+import { StyleSheet, Text, View, Button, Alert, Image, TextInput } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Email:</Text>
+      <View style={styles.imageContainer}>
+        <Image
+          source={PieChart}
+          style={{
+            resizeMode: "center",
+            height: 300
+          }}
+        />
+      </View>
       <View style={styles.buttonContainer}>
         <View style={styles.button}>
           <Button
@@ -39,8 +48,11 @@ export default function App() {
         </View>
         <StatusBar style="auto" />
       </View>
-    </View> 
-
+      <View style={styles.inputContainer}>
+        <Text>Email:</Text>
+        <TextInput style={styles.input}/>
+      </View>
+    </View>
   );
 }
 
@@ -48,8 +60,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+  },
+  imageContainer: {
+    margin: '5%',
+    marginTop: '0%',
+    alignSelf: 'center',
   },
   parentContainer: {
     flex: 1,
@@ -64,6 +80,21 @@ const styles = StyleSheet.create({
   button: {
     marginHorizontal: '15%',
     marginVertical: '4%',
-  }
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  input: {
+    alignSelf: 'center',
+    height: 60,
+    width: 200,
+    margin: 40,
+    borderBottomWidth: 3,
+    borderColor: `#c71585`,
+    padding: 0,
+  },
 });
 
