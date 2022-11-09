@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     width: 200,
     margin: 40,
     borderBottomWidth: 3,
-    borderColor: `#c71585`,
+    borderColor: '#c71585',
     padding: 0,
   },
 });
